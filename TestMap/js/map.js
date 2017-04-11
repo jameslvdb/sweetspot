@@ -1,11 +1,3 @@
-// var mapOptions = {
-//     center: new google.maps.LatLng(37.7831,-122.4039),
-//     zoom: 12,
-//     mapTypeId: google.maps.MapTypeId.ROADMAP
-// };
-
-// new google.maps.Map(document.getElementById('map'), mapOptions);
-
 //Center of the US
 var coordsOfUS = new google.maps.LatLng(37.09024, -95.712891);
 var map;
@@ -45,7 +37,7 @@ function addMarkers(latitudes, longitudes)
 				title: 'Hello, world!'
 			}
 		);
-		currentMarkers[0] = marker;	
+		currentMarkers[i] = marker;	
 	}
 }
 
