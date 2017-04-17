@@ -53,7 +53,6 @@ img {
 {
   height: 400px;
   width: 100%;
-  margin: 0;
 }
 
 /*------------------------------ Sprites ------------------------------*/
@@ -124,15 +123,18 @@ img {
 
 #contents > div {
 	display: inline-block;
+	background-color:rgba(0, 0, 0, 0.5);
 	width: 100%;
 	padding-top: 42px;
 }
 #contents > div.body {
 	width: 950px;
-	padding-left: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
+/*HERE*/
 #contents h2, #contents h3 {
-	color: #000;
+	color: #e3e4e5;
 	font-family: 'Raleway';
 	font-weight: normal;
 	line-height: 24px;
@@ -140,7 +142,7 @@ img {
 	text-transform: uppercase;
 }
 #contents p {
-	color: #606060;
+	color: #e3e4e5;
 	font-size: 13px;
 	line-height: 24px;
 	margin: 0;
@@ -170,17 +172,17 @@ img {
 #featured-jobs li {
 	float: left;
 	width: 304px;
+	color: #fff;
 	position: relative;
 	margin-bottom: 15px;
 }
 #featured-jobs li p {
-	color: #000;
+	color: #bbbdbf;
 	font-family: "Raleway";
 	padding-bottom: 0;
 	text-transform: uppercase;
 }
 #featured-jobs li p span {
-	color: #606060;
 	display: block;
 	padding-right: 20px;
 }
@@ -199,24 +201,25 @@ img {
 	padding: 0;
 }
 #featured-real-estate li {
+	color: #fff;
 	float: right;
 	width: 100%;
 	position: relative;
 	margin-bottom: 15px;
 }
 #featured-real-estate li p {
-	color: #000;
+	color: #bbbdbf;
 	font-family: "Raleway";
 	padding-bottom: 0;
 	text-transform: uppercase;
 }
 #featured-real-estate li p span {
-	color: #606060;
+	color: #bbbdbf;
 	display: block;
 }
 
 #job-search ul {
-	color: #606060;
+	color: #e3e4e5;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -227,7 +230,7 @@ img {
 	margin-bottom: 26px;
 }
 #job-search li a {
-	color: #606060;
+	color: #e3e4e5;
 	text-decoration: none;
 }
 #job-search li a:hover {
@@ -297,7 +300,7 @@ img {
 }
 #form-setup label 
 {
-	color: #606060;
+	color: #e3e4e5;
 	display: block;
 	font-size: 13px;
 	line-height: 24px;
