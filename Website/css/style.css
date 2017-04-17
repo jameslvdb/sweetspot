@@ -171,6 +171,7 @@ img {
 	float: left;
 	width: 304px;
 	position: relative;
+	margin-bottom: 15px;
 }
 #featured-jobs li p {
 	color: #000;
@@ -201,6 +202,7 @@ img {
 	float: right;
 	width: 100%;
 	position: relative;
+	margin-bottom: 15px;
 }
 #featured-real-estate li p {
 	color: #000;
