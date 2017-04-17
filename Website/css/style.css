@@ -250,12 +250,15 @@ img {
 /*=============== ABOUT ===============*/
 #about
 {
+	background: none !important;
 	min-height: 600px;
 }
 #about h2 {
+	color: #000;
 	text-align: center;
 }
 #about h4 {
+	color: #000;
 	font-family: "Raleway";
 	font-size: 14px;
 	font-weight: normal;
@@ -274,6 +277,7 @@ img {
 	margin: 0 10px;
 }
 #about ul li p {
+	color: #606060;
 	padding: 0 20px 0 0;
 }
 
