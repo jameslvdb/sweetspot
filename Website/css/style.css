@@ -106,6 +106,16 @@ img
 	margin-top: 10px;
 	text-transform: uppercase;
 }
+
+#colTwo p 
+{
+	color: #e0e0e0;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 0;
+	padding: 0 0 24px;
+}
+
 #colThree 
 {
 	float: left;
@@ -159,6 +169,91 @@ img
 #colThree p 
 {
 	line-height: 25px;
+}
+
+#colOneBottom
+{
+	float: left;
+	width: 47%;
+	padding: 10px 15px;
+	min-width: 200px;
+	height: 600px;
+	background-color:rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+}
+
+#colOneBottom p 
+{
+	color: #e0e0e0;
+	font-size: 13px;
+	line-height: 24px;
+	margin: 0;
+	padding: 0 0 24px;
+}
+
+#colOneBottom h2, #colOneBottom h3 
+{
+	color: #fff;
+	font-family: 'Raleway';
+	font-weight: normal;
+	line-height: 24px;
+	margin-top: 10px;
+	text-transform: uppercase;
+}
+#colOneBottom p 
+{
+	color: #e0e0e0;
+	font-size: 13px;
+	line-height: 24px;
+	margin: 0;
+	padding: 0 0 24px;
+}
+
+#colOneBottom p a 
+{
+	color: #606060;
+}
+
+#colOneBottom p a:hover 
+{
+	color: #000;
+}
+
+#colOneBottom p 
+{
+	line-height: 25px;
+}
+
+#colTwoBottom 
+{
+	float: left;
+	min-width: 300px;
+	width: 45%;
+	margin: 0px;
+	margin-left: 15px;
+	margin-right: 15px;
+	padding: 10px 15px;
+	background-color:rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	height: 600px;
+}
+#colTwoBottom h2, #colTwoBottom h3 
+{
+	color: #fff;
+	font-family: 'Raleway';
+	font-weight: normal;
+	line-height: 24px;
+	margin-top: 10px;
+	text-transform: uppercase;
+}
+
+#colTwoBottom p 
+{
+	color: #e0e0e0;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 0;
+	padding: 0 0 24px;
 }
 
 
@@ -269,7 +364,6 @@ img
 	padding-top: 42px;
 	padding-left: 2%;
 	padding-right: 2%;
-	padding-bottom: 5%;
 }
 
 /*============== JOBS ==============*/
@@ -405,16 +499,16 @@ img
 }
 
 /*=============== FORMS ===============*/
-#form-setup > div 
+#form-setup
 {
 	background-position: right 0;
 	height: 30px;
-	width: 30px;
+	width: 100%;
 }
 #form-setup form 
 {
 	float: left;
-	width: 200px;
+	width: 97%;
 	padding: 0 0 0 0px;
 }
 #form-setup label 
@@ -427,7 +521,7 @@ img
 #form-setup input.txtfield 
 {
 	height: 25px;
-	width: 300px;
+	width: 100%;
 	border: 1px solid #b3b3b3;
 	margin: 0 0 18px;
 	padding: 0 4px;
