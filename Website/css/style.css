@@ -9,25 +9,30 @@
 	src: url('../fonts/Raleway-Regular.ttf');
 }
 
-body {
+body
+{
 	background: url(../images/background.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
 	font-family: 'Raleway';
 	margin: 0;
 }
-#page {
+#page
+{
 	width: 100%;
 	margin: 0 auto;
 	padding: 96px 0 0;
 }
-img {
+
+img
+{
 	border: 0;
 }
 
 /*================== COLUMNS =================*/
 
-#colOne {
+#colOne 
+{
 	float: left;
 	width: 26%;
 	padding: 10px 15px;
@@ -35,10 +40,10 @@ img {
 	height: 600px;
 	background-color:rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
-	/*color: #e0e0e0;*/
 }
 
-#colOne p {
+#colOne p 
+{
 	color: #e0e0e0;
 	font-size: 13px;
 	line-height: 24px;
@@ -46,7 +51,8 @@ img {
 	padding: 0 0 24px;
 }
 
-#colOne h2, #colOne h3 {
+#colOne h2, #colOne h3 
+{
 	color: #fff;
 	font-family: 'Raleway';
 	font-weight: normal;
@@ -54,7 +60,8 @@ img {
 	margin-top: 10px;
 	text-transform: uppercase;
 }
-#colOne p {
+#colOne p 
+{
 	color: #e0e0e0;
 	font-size: 13px;
 	line-height: 24px;
@@ -62,19 +69,23 @@ img {
 	padding: 0 0 24px;
 }
 
-#colOne p a {
+#colOne p a 
+{
 	color: #606060;
 }
 
-#colOne p a:hover {
+#colOne p a:hover 
+{
 	color: #000;
 }
 
-#colOne p {
+#colOne p 
+{
 	line-height: 25px;
 }
 
-#colTwo {
+#colTwo 
+{
 	float: left;
 	min-width: 300px;
 	max-width: 38%;
@@ -86,7 +97,8 @@ img {
 	border-radius: 10px;
 	height: 600px;
 }
-#colTwo h2, #colTwo h3 {
+#colTwo h2, #colTwo h3 
+{
 	color: #fff;
 	font-family: 'Raleway';
 	font-weight: normal;
@@ -94,7 +106,8 @@ img {
 	margin-top: 10px;
 	text-transform: uppercase;
 }
-#colThree {
+#colThree 
+{
 	float: left;
 	min-width: 200px;
 	width: 26%;
@@ -104,7 +117,8 @@ img {
 	height: 600px;
 }
 
-#colThree p {
+#colThree p 
+{
 	color: #e0e0e0;
 	font-size: 13px;
 	line-height: 24px;
@@ -112,7 +126,8 @@ img {
 	padding: 0 0 24px;
 }
 
-#colThree h2, #colThree h3 {
+#colThree h2, #colThree h3 
+{
 	color: #fff;
 	font-family: 'Raleway';
 	font-weight: normal;
@@ -121,7 +136,9 @@ img {
 	margin-top: 10px;
 	text-transform: uppercase;
 }
-#colThree p {
+
+#colThree p 
+{
 	color: #e0e0e0;
 	font-size: 13px;
 	line-height: 24px;
@@ -129,15 +146,18 @@ img {
 	padding: 0 0 24px;
 }
 
-#colThree p a {
+#colThree p a 
+{
 	color: #606060;
 }
 
-#colThree p a:hover {
+#colThree p a:hover 
+{
 	color: #000;
 }
 
-#colThree p {
+#colThree p 
+{
 	line-height: 25px;
 }
 
@@ -183,7 +203,8 @@ img {
 	background: url(../images/button.png) no-repeat;
 }
 /*================== HEADER ==================*/
-#header {
+#header 
+{
 	/*position: fixed;*/
 	left: 0px;
 	bottom: 0px;
@@ -197,14 +218,17 @@ img {
 	left: 0;
 	top: 0;
 }
-#header > div {
+
+#header > div 
+{
 	height: 96px;
 	width: 85%;
 	margin: 0 auto;
 	padding: 0 10px;
 }
 /*================== LOGO ==================*/
-#logo {
+#logo 
+{
 	float: left;
 	display: inline-block;
 	margin-top: 20px;
@@ -240,7 +264,6 @@ img {
 	max-width: 90%;
 	min-width: 1200px;
 	min-height: 600px;
-	/*background-color:rgba(0, 0, 0, 0.3);*/
 	margin-left: 5%;
 	margin-right: 5%;
 	padding-top: 42px;
@@ -248,33 +271,6 @@ img {
 	padding-right: 2%;
 	padding-bottom: 5%;
 }
-/*#contents > div.body {
-	width: 90%px;
-	padding-left: 15px;
-	padding-right: 15px;
-}*/
-/*HERE*/
-/*#contents h2, #contents h3 {
-	color: #fff;
-	font-family: 'Raleway';
-	font-weight: normal;
-	line-height: 24px;
-	margin: 0 0 24px;
-	text-transform: uppercase;
-}*/
-#contents p {
-	color: #e0e0e0;
-	font-size: 15px;
-	line-height: 24px;
-	margin: 0;
-	padding: 0 0 24px;
-}
-/*#contents p a {
-	color: #606060;
-}
-#contents p a:hover {
-	color: #000;
-}*/
 
 /*============== JOBS ==============*/
 #featured-jobs {
@@ -313,7 +309,6 @@ img {
 	float: right;
 	height: 535px;
 	width: 100%;
-	padding: 0 10px 0 0;
 }
 #featured-real-estate ul {
 	display: inline-block;

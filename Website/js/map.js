@@ -17,7 +17,6 @@ function loadScript()
 	document.body.appendChild(script);
 	map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-
 	//Test adding markers by coordinates
 	var latitudes = [37, 37.4, 37.8];
 	var longitudes = [-95, -96, -94];
