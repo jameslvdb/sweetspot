@@ -178,7 +178,7 @@ img
 	width: 47%;
 	padding: 10px 15px;
 	min-width: 200px;
-	height: 600px;
+	height: 650px;
 	background-color:rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
 }
@@ -229,14 +229,13 @@ img
 {
 	float: left;
 	min-width: 300px;
-	width: 45%;
+	width: 46.5%;
 	margin: 0px;
 	margin-left: 15px;
-	margin-right: 15px;
 	padding: 10px 15px;
 	background-color:rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
-	height: 600px;
+	height: 650px;
 }
 #colTwoBottom h2, #colTwoBottom h3 
 {
@@ -370,7 +369,7 @@ img
 #floor-space{
 	max-width: 90%;
 	min-width: 1200px;
-	min-height: 50px;
+	min-height: 100px;
 	margin-left: 5%;
 	margin-right: 5%;
 	padding-top: 42px;
