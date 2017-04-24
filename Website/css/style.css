@@ -17,13 +17,49 @@ body {
 	margin: 0;
 }
 #page {
-	width: 960px;
+	width: 100%;
 	margin: 0 auto;
 	padding: 96px 0 0;
 }
 img {
 	border: 0;
 }
+
+/*================== COLUMNS =================*/
+#content {
+	min-width: 800px;
+	max-width: 90%;
+	background-color:rgba(0, 0, 0, 0.3);
+	margin: 70px auto;
+	padding: 0px 0px 0px 0px;
+}
+
+#colOne {
+	float: left;
+	width: 28%;
+}
+
+#colOne p {
+	margin-top: 10px;
+}
+
+#colTwo {
+	float: left;
+	max-width: 40%;
+	margin: 0px;
+	padding: 0px 15px;
+}
+
+#colTwo p {
+	padding: 0 1.5em 0 1.5em;
+	line-height: 25px;
+}
+
+#colThree {
+	float: left;
+	max-width: 28%;
+}
+
 
 /*================== IMAGES ==================*/
 #header span.shadow, #footer span.shadow, #sidebar li.selected > a, #sidebar li > a:hover 
@@ -68,6 +104,7 @@ img {
 #header {
 	background-color: #303030;
 	width: 100%;
+	min-width: 800px;
 	text-align: right;
 	position: absolute;
 	left: 0;
@@ -75,7 +112,7 @@ img {
 }
 #header > div {
 	height: 96px;
-	width: 995px;
+	width: 85%;
 	margin: 0 auto;
 	padding: 0 10px;
 }
@@ -100,7 +137,7 @@ img {
 {
 	display: inline-block;
 	list-style: none;
-	width: 480px;
+	width: 50%;
 	margin: 30px 0 0;
 	padding: 0;
 }
