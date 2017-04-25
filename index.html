@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<link rel="shortcut icon" href="images/favicon.ico" /> 
+<link rel="shortcut icon" href="images/favicon.ico" />
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -8,6 +8,7 @@
 		<!-- References -->
 		<link rel="stylesheet" href="css/style.css" type="text/css">
 		<script type = "text/javascript" src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdN58T_xbyPWpy4CtSUUFoIbn40w5AOEc"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script type = "text/javascript" src = "js/map.js"></script>
 	</head>
 	<body>
@@ -185,26 +186,26 @@
 				</div>
 				<div id="colTwoBottom">
 				<h3>Real Estate In this Area</h3>
-					<div id="form-setup">
+					<div id="form-setup" name="realestate-form">
 						<form>
 							<label>City</label>
-							<input type="text" value="" class="txtfield">
+							<input id="reCity" type="text" value="" class="txtfield">
 							<label>State</label>
-							<input type="text" value="" class="txtfield">
+							<input id="reState" type="text" value="" class="txtfield">
 							<label>Zip</label>
-							<input type="text" value="" class="txtfield">
+							<input id="reZip" type="text" value="" class="txtfield">
 							<label>Distance</label>
-							<input type="text" value="" class="txtfield">
+							<input id="reDistance" type="text" value="" class="txtfield">
 							<label>Minimum Budget</label>
-							<input type="text" value="" class="txtfield">
+							<input id="reMinBudget" type="text" value="" class="txtfield">
 							<label>Maximum Budget</label>
-							<input type="text" value="" class="txtfield">
+							<input id="reMaxBudget" type="text" value="" class="txtfield">
 							<label>Show Apartments</label>
 							<input id="checkBox" type="checkbox">
 							<label>Show Houses</label>
 							<input id="checkBox" type="checkbox">
 							<p></p>
-							<input type="submit" value="Submit" class="btn">
+							<input type="submit" value="Submit" onclick="zillowCall();" class="btn">
 						</form>
 					</div>
 				</div>

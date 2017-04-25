@@ -6,7 +6,7 @@ var currentMarkers = new Array();
 function loadScript()
 {
 	//Create the map
-	var mapOptions = 
+	var mapOptions =
 	{
 	    center: coordsOfUS,
 	    zoom: 5,
@@ -34,8 +34,17 @@ function addMarkers(latitudes, longitudes)
 				title: 'Hello, world!'
 			}
 		);
-		currentMarkers[i] = marker;	
+		currentMarkers[i] = marker;
 	}
 }
 
+function zillowCall()
+{
+	var selectForms = document.forms;
+	var elements = selectForms[1].elements;
+	for (i = 0; i < elements.length; i++) {
+		console.log(elements[i].value);
+	}
+	
+}
 window.onload = loadScript;
