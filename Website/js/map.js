@@ -6,7 +6,7 @@ var currentMarkers = new Array();
 function loadScript()
 {
 	//Create the map
-	var mapOptions = 
+	var mapOptions =
 	{
 	    center: coordsOfUS,
 	    zoom: 5,
@@ -21,6 +21,11 @@ function loadScript()
 	var latitudes = [37, 37.4, 37.8];
 	var longitudes = [-95, -96, -94];
 	addMarkers(latitudes, longitudes);
+
+	$( "realestate-form" ).submit(function( event ) {
+		zillowCall();
+  		event.preventDefault();
+	});
 }
 
 function addMarkers(latitudes, longitudes)
@@ -34,8 +39,28 @@ function addMarkers(latitudes, longitudes)
 				title: 'Hello, world!'
 			}
 		);
-		currentMarkers[i] = marker;	
+		currentMarkers[i] = marker;
 	}
+}
+
+function zillowSetup()
+{
+	var elements = document.forms["realestate-form"].elements;
+	var queryPrefix = "https://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=X1-ZWz1frq0hcv0nf_4wzn5"
+	var stateStr = "&state=" + elements[1].value.toLowerCase();
+	var cityStr = "&city=" + elements[0].value.toLowerCase();
+	var queryURL = queryPrefix + stateStr + cityStr + "&childtype=neighborhood";
+	console.log(queryURL);
+	zillowCall(queryURL);
+}
+
+function zillowCall(url)
+{
+	// do the jQuery thing here
+	$.get( url, function( data ) {
+  		$( ".result" ).html( data );
+  		alert( "Load was performed." );
+	});
 }
 
 window.onload = loadScript;

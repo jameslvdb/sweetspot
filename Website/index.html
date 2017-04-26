@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<link rel="shortcut icon" href="images/favicon.ico" /> 
+<link rel="shortcut icon" href="images/favicon.ico" />
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="css/style.css" type="text/css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script type = "text/javascript" src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdN58T_xbyPWpy4CtSUUFoIbn40w5AOEc"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script type = "text/javascript" src = "js/map.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
@@ -319,25 +320,25 @@
 				<div id="colTwoBottom">
 				<h3>Real Estate In this Area</h3>
 					<div id="form-setup">
-						<form>
+						<form id="realestate-form">
 							<label>City</label>
-							<input type="text" value="" class="txtfield">
+							<input name="city" type="text" value="" class="txtfield">
 							<label>State</label>
-							<input type="text" value="" class="txtfield">
+							<input name="state" type="text" value="" class="txtfield">
 							<label>Zip</label>
-							<input type="text" value="" class="txtfield">
+							<input name="zip" type="text" value="" class="txtfield">
 							<label>Distance</label>
-							<input type="text" value="" class="txtfield">
+							<input name="distance" type="text" value="" class="txtfield">
 							<label>Minimum Budget</label>
-							<input type="text" value="" class="txtfield">
+							<input name="minBudget" type="text" value="" class="txtfield">
 							<label>Maximum Budget</label>
-							<input type="text" value="" class="txtfield">
-							<label>Show Apartments</label>
-							<input id="checkBox" type="checkbox">
+							<input name="maxBudget" type="text" value="" class="txtfield">
+							<!-- <label>Show Apartments</label>
+							<input name="apartmentBox" type="checkbox">
 							<label>Show Houses</label>
-							<input id="checkBox" type="checkbox">
+							<input name="houseBox" type="checkbox"> -->
 							<p></p>
-							<input type="submit" value="Submit" class="btn">
+							<input type="button" value="Submit" onclick="zillowSetup()" class="btn">
 						</form>
 					</div>
 				</div>
