@@ -46,7 +46,7 @@ function addMarkers(latitudes, longitudes)
 function zillowSetup()
 {
 	var elements = document.forms["realestate-form"].elements;
-	var queryPrefix = "http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=X1-ZWz1frq0hcv0nf_4wzn5"
+	var queryPrefix = "https://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=X1-ZWz1frq0hcv0nf_4wzn5"
 	var stateStr = "&state=" + elements[1].value.toLowerCase();
 	var cityStr = "&city=" + elements[0].value.toLowerCase();
 	var queryURL = queryPrefix + stateStr + cityStr + "&childtype=neighborhood";
