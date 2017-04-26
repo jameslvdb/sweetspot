@@ -43,14 +43,24 @@ function addMarkers(latitudes, longitudes)
 	}
 }
 
-function zillowCall()
+function zillowSetup()
 {
 	var elements = document.forms["realestate-form"].elements;
-	for (i = 0; i < elements.length; i++) {
-		if (elements[i].value) {
-			console.log(elements[i].value);
-		}
-	}
+	var queryPrefix = "http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=X1-ZWz1frq0hcv0nf_4wzn5"
+	var stateStr = "&state=" + elements[1].value.toLowerCase();
+	var cityStr = "&city=" + elements[0].value.toLowerCase();
+	var queryURL = queryPrefix + stateStr + cityStr + "&childtype=neighborhood";
+	console.log(queryURL);
+	zillowCall(queryURL);
+}
+
+function zillowCall(url)
+{
+	// do the jQuery thing here
+	$.get( url, function( data ) {
+  		$( ".result" ).html( data );
+  		alert( "Load was performed." );
+	});
 }
 
 window.onload = loadScript;
