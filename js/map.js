@@ -21,6 +21,11 @@ function loadScript()
 	var latitudes = [37, 37.4, 37.8];
 	var longitudes = [-95, -96, -94];
 	addMarkers(latitudes, longitudes);
+
+	$( "realestate-form" ).submit(function( event ) {
+		zillowCall();
+  		event.preventDefault();
+	});
 }
 
 function addMarkers(latitudes, longitudes)
@@ -40,11 +45,12 @@ function addMarkers(latitudes, longitudes)
 
 function zillowCall()
 {
-	var selectForms = document.forms;
-	var elements = selectForms[1].elements;
+	var elements = document.forms["realestate-form"].elements;
 	for (i = 0; i < elements.length; i++) {
-		console.log(elements[i].value);
+		if (elements[i].value) {
+			console.log(elements[i].value);
+		}
 	}
-	
 }
+
 window.onload = loadScript;
