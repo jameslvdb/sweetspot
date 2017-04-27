@@ -287,10 +287,6 @@ img
 {
 	background: url(../images/shadows.png) repeat-x;
 }
-.btn
-{
-	background: url(../images/button.png) no-repeat;
-}
 /*================== HEADER ==================*/
 #header 
 {
@@ -530,8 +526,9 @@ img
 	resize: none;
 }
 #form-setup input.btn {
-	background-position: 0,0px;
 	color: #fff;
+	background-color: #303030;
+	border-radius: 20px;
 	cursor: pointer;
 	font-family: "Raleway";
 	font-size: 13px;
