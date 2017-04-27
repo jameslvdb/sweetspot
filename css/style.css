@@ -92,6 +92,7 @@ img
 	border-radius: 10px;
 	height: 620px;
 	font-family: 'Raleway';
+	padding: 10px 10px 5px 10px;
 }
 #colTwo h2, #colTwo h3 
 {
@@ -111,8 +112,8 @@ img
 	font-size: 16px;
 	line-height: 24px;
 	margin: 0;
-	padding: 5px 5px 5px 5px;
 	font-family: 'Raleway';
+	padding: 5px 5px 5px 5px;
 }
 
 #colThree 
@@ -138,7 +139,6 @@ img
 	color: #fff;
 	font-family: 'Raleway';
 	font-weight: normal;
-	font-size: 18px;
 	line-height: 20px;
 	margin-top: 10px;
 	text-transform: uppercase;
@@ -279,7 +279,6 @@ img
 #map
 {
   height: 400px;
-  width: 95%;
 }
 
 /*------------------------------ Sprites ------------------------------*/
