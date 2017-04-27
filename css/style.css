@@ -279,6 +279,10 @@ img
 #map
 {
   height: 400px;
+<<<<<<< HEAD
+=======
+  width: 100%;
+>>>>>>> 50c3ce22b74b53b0e50827244e125f268431f5ac
 }
 
 /*------------------------------ Sprites ------------------------------*/
@@ -498,7 +502,7 @@ img
 {
 	float: left;
 	width: 97%;
-	padding: 0 0 0 0px;
+	padding-left: 10px;
 }
 #form-setup label 
 {
