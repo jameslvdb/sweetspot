@@ -279,7 +279,7 @@ img
 #map
 {
   height: 400px;
-  width: 95%;
+  width: 100%;
 }
 
 /*------------------------------ Sprites ------------------------------*/
@@ -499,7 +499,7 @@ img
 {
 	float: left;
 	width: 97%;
-	padding: 0 0 0 0px;
+	padding-left: 10px;
 }
 #form-setup label 
 {
