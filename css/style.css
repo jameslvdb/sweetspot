@@ -46,6 +46,7 @@ img
 	border-radius: 10px;
 	height: 620px;
 	padding: 5px 5px 5px 5px;
+	font-family: 'Raleway';
 }
 
 #colOne p 
@@ -55,6 +56,7 @@ img
 	line-height: 24px;
 	margin: 0;
 	padding: 0 0 24px;
+	font-family: 'Raleway';
 }
 
 #colOne h2, #colOne h3 
@@ -89,6 +91,7 @@ img
 	background-color:rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
 	height: 620px;
+	font-family: 'Raleway';
 }
 #colTwo h2, #colTwo h3 
 {
@@ -109,6 +112,7 @@ img
 	line-height: 24px;
 	margin: 0;
 	padding: 5px 5px 5px 5px;
+	font-family: 'Raleway';
 }
 
 #colThree 
@@ -172,6 +176,7 @@ img
 	background-color:rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
 	padding: 5px 5px 5px 5px;
+	font-family: 'Raleway';
 }
 
 #colOneBottom p 
@@ -224,6 +229,7 @@ img
 	border-radius: 10px;
 	height: 650px;
 	padding: 5px 5px 5px 5px;
+	font-family: 'Raleway';
 }
 #colTwoBottom h2, #colTwoBottom h3 
 {
