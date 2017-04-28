@@ -24,8 +24,6 @@ function loadScript()
 	// var names = ['one', 'two', 'three'];
 	// var descriptions = ['descOne', 'descTwo','descThree'];
 	// addJobMarkers(latitudes, longitudes, names, descriptions, false);
-	// setTimeout(function() {addJobMarkers(latitudes, longitudes, names, descriptions, false);}, 2000);
-	
 }
 
 function addJobMarkers(latitudes, longitudes, names, descriptions, isJob)
@@ -38,32 +36,52 @@ function addJobMarkers(latitudes, longitudes, names, descriptions, isJob)
 
 	for(var i = 0; i < latitudes.length; i++)
 	{
-		var marker = new google.maps.Marker(
-			{
-				position: new google.maps.LatLng(latitudes[i], longitudes[i]),
-				map: map,
-				title: names[i],
-     			animation: google.maps.Animation.DROP,
-				infoWindowShown: true,
-				label: labels[i]
-			}
-		);
-
-		//Change marker depending on whether it is a job or real estate
+		var marker;
 		if(isJob)
 		{
-			//marker.setIcon('http://maps.google.com/mapfiles/kml/paddle/blu-blank.png');
-			currentJobMarkers[i] = marker;		
+			marker = new google.maps.Marker(
+				{
+					position: new google.maps.LatLng(latitudes[i], longitudes[i]),
+					map: map,
+					icon: {
+						url: 'http://i.imgur.com/YuokAd3.png',
+						size: new google.maps.Size(100, 100),
+						origin: new google.maps.Point(0, 0),
+						anchor: new google.maps.Point(0, 20),
+						scaledSize: new google.maps.Size(20, 30),
+						labelOrigin: new google.maps.Point(10, 11)
+					},
+					title: names[i],
+	     			animation: google.maps.Animation.DROP,
+					infoWindowShown: true,
+					label: labels[i]
+				}
+			);			
 		}
 		else
 		{
-			//marker.setIcon('http://maps.google.com/mapfiles/kml/paddle/red-blank.png');	
-			currentRealEstateMarkers[i] = marker;	
+			marker = new google.maps.Marker(
+				{
+					position: new google.maps.LatLng(latitudes[i], longitudes[i]),
+					map: map,
+					icon: {
+						url: 'http://i.imgur.com/OoSsCTj.png',
+						size: new google.maps.Size(100, 100),
+						origin: new google.maps.Point(0, 0),
+						anchor: new google.maps.Point(0, 20),
+						scaledSize: new google.maps.Size(20, 30),
+						labelOrigin: new google.maps.Point(10, 11)
+					},
+					title: names[i],
+	     			animation: google.maps.Animation.DROP,
+					infoWindowShown: true,
+					label: labels[i]
+				}
+			);	
 		}
 
 		//Set what the tooltip will say
 		var html = '<b>' + names[i] + '</b> <p></p>' + descriptions[i];
-
 
 		//Set up the marker to display its tooltip when clicked
 		var infowindow = new google.maps.InfoWindow
