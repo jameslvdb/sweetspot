@@ -33,20 +33,7 @@ function addJobMarkers(latitudes, longitudes, names, descriptions, isJob)
 	var labels = 'ABCDEFGHIJ';
 
 	//Clear all old markers
-	if(isJob)
-	{
-		for(var i = 0; i < currentJobMarkers.length; i++)
-		{
-			currentJobMarkers[i].setMap(null);
-		}
-	}
-	else
-	{
-		for(var i = 0; i < currentRealEstateMarkers.length; i++)
-		{
-			currentRealEstateMarkers[i].setMap(null);
-		}
-	}
+	resetMarkers(isJob);
 
 
 	for(var i = 0; i < latitudes.length; i++)
@@ -56,7 +43,6 @@ function addJobMarkers(latitudes, longitudes, names, descriptions, isJob)
 				position: new google.maps.LatLng(latitudes[i], longitudes[i]),
 				map: map,
 				title: names[i],
-				draggable: true,
      			animation: google.maps.Animation.DROP,
 				infoWindowShown: true,
 				label: labels[i]
@@ -83,18 +69,34 @@ function addJobMarkers(latitudes, longitudes, names, descriptions, isJob)
 		var infowindow = new google.maps.InfoWindow
 		(
 			{
-	          content: 'nothing'
+	        	content: 'nothing'
 	        }
         );
-
         marker.html = html;
-
         marker.addListener('click', function() 
 	        {
 	        	infowindow.setContent(this.html);
 	        	infowindow.open(map, this);
 	        }
         );
+	}
+}
+
+function resetMarkers(isJob)
+{
+	if(isJob)
+	{
+		for(var i = 0; i < currentJobMarkers.length; i++)
+		{
+			currentJobMarkers[i].setMap(null);
+		}
+	}
+	else
+	{
+		for(var i = 0; i < currentRealEstateMarkers.length; i++)
+		{
+			currentRealEstateMarkers[i].setMap(null);
+		}
 	}
 }
 
