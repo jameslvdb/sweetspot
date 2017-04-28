@@ -6,7 +6,7 @@ var currentMarkers = new Array();
 function loadScript()
 {
 	//Create the map
-	var mapOptions = 
+	var mapOptions =
 	{
 	    center: coordsOfUS,
 	    zoom: 5,
@@ -34,8 +34,25 @@ function addMarkers(latitudes, longitudes)
 				title: 'Hello, world!'
 			}
 		);
-		currentMarkers[i] = marker;	
+		currentMarkers[i] = marker;
 	}
+}
+
+function zillowSetup()
+{
+	var elements = document.forms["realestate-form"].elements;
+	var basicURL = "http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=X1-ZWz1frq0hcv0nf_4wzn5";
+	var stateURL = basicURL + "&state=" + elements[1].value.toLowerCase();
+	var cityURL = stateURL + "&city=" + elements[0].value.toLowerCase();
+	var queryURL = cityURL + "&childtype=neighborhood";
+	var encodedURL = encodeURIComponent(queryURL);
+	console.log(encodedURL);
+	$.ajax({
+    	type: "GET",
+    	url: "https://radiant-woodland-13822.herokuapp.com/?url=" + queryURL,
+    	dataType: "xml",
+    	success: console.log("Success")
+	});
 }
 
 window.onload = loadScript;

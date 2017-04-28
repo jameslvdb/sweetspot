@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<link rel="shortcut icon" href="images/favicon.ico" /> 
+<link rel="shortcut icon" href="images/favicon.ico" />
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -8,6 +8,7 @@
 		<!-- References -->
 		<link rel="stylesheet" href="css/style.css" type="text/css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 		<script type = "text/javascript" src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdN58T_xbyPWpy4CtSUUFoIbn40w5AOEc"></script>
 		<script type = "text/javascript" src = "js/map.js"></script>
 		<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -248,7 +249,7 @@
 								</div>
 							</div>
 						</div>
-					</div> 
+					</div>
 					<div class="col-md-3 col-sm-6 col-xs-6">
 						<div id="colThree">
 							<div id="featured-real-estate">
@@ -332,7 +333,7 @@
 						<div id="colTwoBottom">
 						<h3>Real Estate In this Area</h3>
 							<div id="form-setup">
-								<form>
+								<form id="realestate-form">
 									<label>City</label>
 									<input type="text" value="" class="txtfield">
 									<label>State</label>
@@ -345,12 +346,12 @@
 									<input type="text" value="" class="txtfield">
 									<label>Maximum Budget</label>
 									<input type="text" value="" class="txtfield">
-									<label>Show Apartments</label>
+									<!-- <label>Show Apartments</label>
 									<input id="checkBox" type="checkbox">
 									<label>Show Houses</label>
-									<input id="checkBox" type="checkbox">
+									<input id="checkBox" type="checkbox"> -->
 									<p></p>
-									<input type="submit" value="Submit" class="btn">
+									<input type="button" value="Submit" onclick="zillowSetup()" class="btn">
 								</form>
 							</div>
 						</div>
