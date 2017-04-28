@@ -45,7 +45,7 @@ function addJobMarkers(latitudes, longitudes, names, descriptions, isJob)
 					map: map,
 					icon: {
 						url: 'http://i.imgur.com/YuokAd3.png',
-						size: new google.maps.Size(100, 100),
+						size: new google.maps.Size(20, 30),
 						origin: new google.maps.Point(0, 0),
 						anchor: new google.maps.Point(0, 20),
 						scaledSize: new google.maps.Size(20, 30),
@@ -66,7 +66,7 @@ function addJobMarkers(latitudes, longitudes, names, descriptions, isJob)
 					map: map,
 					icon: {
 						url: 'http://i.imgur.com/OoSsCTj.png',
-						size: new google.maps.Size(100, 100),
+						size: new google.maps.Size(20, 30),
 						origin: new google.maps.Point(0, 0),
 						anchor: new google.maps.Point(0, 20),
 						scaledSize: new google.maps.Size(20, 30),
