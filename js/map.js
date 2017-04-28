@@ -19,11 +19,11 @@ function loadScript()
 	map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
 	//Test adding markers by coordinates
-	// var latitudes = [37, 37.4, 37.8];
-	// var longitudes = [-95, -96, -94];
-	// var names = ['one', 'two', 'three'];
-	// var descriptions = ['descOne', 'descTwo','descThree'];
-	// addJobMarkers(latitudes, longitudes, names, descriptions, false);
+	var latitudes = [37, 37.4, 37.8];
+	var longitudes = [-95, -96, -94];
+	var names = ['one', 'two', 'three'];
+	var descriptions = ['descOne', 'descTwo','descThree'];
+	addJobMarkers(latitudes, longitudes, names, descriptions, true);
 }
 
 function addJobMarkers(latitudes, longitudes, names, descriptions, isJob)
@@ -87,7 +87,8 @@ function addJobMarkers(latitudes, longitudes, names, descriptions, isJob)
 		var infowindow = new google.maps.InfoWindow
 		(
 			{
-	        	content: 'nothing'
+	        	content: 'nothing',
+	        	pixelOffset: new google.maps.Size(-40,0)
 	        }
         );
         marker.html = html;
