@@ -128,11 +128,58 @@ function zillowSetup()
 	var queryURL = cityURL + "&childtype=neighborhood";
 	var encodedURL = encodeURIComponent(queryURL);
 	console.log(encodedURL);
+	var minBudget = parseInt(elements[4].value);
+	var maxBudget = parseInt(elements[5].value);
+	console.log('minBudget: ' + minBudget);
+	var zillowData = zillowAjax(encodedURL, minBudget, maxBudget);
+	if (zillowData) {
+		console.log("zillowData success");
+	}
+	// var zillowJSON = xmlToJson(zillowData);
+		// console.log(zillowJSON);
+}
+
+function zillowAjax(url, min, max) {
 	$.ajax({
-    	type: "GET",
-    	url: "https://radiant-woodland-13822.herokuapp.com/?url=" + queryURL,
-    	dataType: "xml",
-    	success: console.log("Success")
+		type: "GET",
+		url: "https://radiant-woodland-13822.herokuapp.com/?url=" + url,
+		dataType: "xml",
+		success: function(xml) {
+			// find 'members' in the xml ?
+            var regions = $.grep($(xml).find('list region'), function(region) {
+				var zindexElem = $(region).find('zindex')[0];
+				if (!zindexElem) {
+					console.log("bailing out on " + zindexElem);
+					return false;
+				}
+				var zindex = parseInt($(zindexElem).text());
+				console.log(zindex);
+				return zindex <= max && zindex >= min;
+			});
+			$(regions).each(function() {
+				// find 'name' of each 'member' ?
+                $(this).find('name').each(function() {
+                    var name = $(this).text();
+                    console.log("Name: " + name);
+                });
+				$(this).find('zindex').each(function() {
+					var zindex = $(this).text();
+					console.log("Zindex: " + zindex);
+				});
+				$(this).find('latitude').each(function() {
+					var lat = $(this).text();
+					console.log("Latitude: " + lat);
+				});
+				$(this).find('longitude').each(function() {
+					var long = $(this).text();
+					console.log("Longitude: " + long);
+				});
+				$(this).find('url').each(function() {
+					var neighborhoodURL = $(this).text();
+					console.log("URL: " + neighborhoodURL);
+				})
+            });
+    	}
 	});
 }
 
