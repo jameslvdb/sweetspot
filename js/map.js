@@ -121,31 +121,37 @@ function resetMarkers(isJob)
 
 function zillowSetup()
 {
+	// gets all of the elements in the real estate form
 	var elements = document.forms["realestate-form"].elements;
+	// sets up the zillow url that I'm going to use
 	var basicURL = "http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=X1-ZWz1frq0hcv0nf_4wzn5";
+	// append the search parameters to the url
 	var stateURL = basicURL + "&state=" + elements[1].value.toLowerCase();
 	var cityURL = stateURL + "&city=" + elements[0].value.toLowerCase();
 	var queryURL = cityURL + "&childtype=neighborhood";
+	// encodes the url so that the proxy can use it properly
 	var encodedURL = encodeURIComponent(queryURL);
-	console.log(encodedURL);
+	// console.log(encodedURL);
 	var minBudget = parseInt(elements[4].value);
 	var maxBudget = parseInt(elements[5].value);
-	console.log('minBudget: ' + minBudget);
+	// console.log('minBudget: ' + minBudget);
 	var zillowData = zillowAjax(encodedURL, minBudget, maxBudget);
 	if (zillowData) {
 		console.log("zillowData success");
 	}
-	// var zillowJSON = xmlToJson(zillowData);
-		// console.log(zillowJSON);
 }
 
 function zillowAjax(url, min, max) {
+	// $.ajax is the jQuery function for making a query
 	$.ajax({
 		type: "GET",
+		// this url is the heroku app that I'm using as a proxy
 		url: "https://radiant-woodland-13822.herokuapp.com/?url=" + url,
 		dataType: "xml",
 		success: function(xml) {
-			// find 'members' in the xml ?
+			// regions is an array of all neighborhoods that match our
+			// search criteria based on min and max budgets. This is
+			// achieved using the $.grep function.
             var regions = $.grep($(xml).find('list region'), function(region) {
 				var zindexElem = $(region).find('zindex')[0];
 				if (!zindexElem) {
@@ -156,8 +162,9 @@ function zillowAjax(url, min, max) {
 				console.log(zindex);
 				return zindex <= max && zindex >= min;
 			});
+			// for each region that matches our criteria, show the data
+			// on the console 
 			$(regions).each(function() {
-				// find 'name' of each 'member' ?
                 $(this).find('name').each(function() {
                     var name = $(this).text();
                     console.log("Name: " + name);
