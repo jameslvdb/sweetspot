@@ -123,6 +123,12 @@ function zillowSetup()
 {
 	// gets all of the elements in the real estate form
 	var elements = document.forms["realestate-form"].elements;
+	for (i = 0; i < elements.length; i++) {
+		if (elements[i].value == "") {
+			alert("Please fill out all fields.");
+			return;
+		}
+	}
 	// sets up the zillow url that I'm going to use
 	var basicURL = "http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=X1-ZWz1frq0hcv0nf_4wzn5";
 	// append the search parameters to the url
