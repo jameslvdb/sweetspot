@@ -16,6 +16,47 @@
 	}
 }
 
+nav
+{
+	background-color: red;
+}
+
+.navbar-default 
+{
+
+	height: 90px;
+	margin-top: -96px;
+	opacity: 0.9;
+
+}
+
+.navbar-brand 
+{
+	margin-top: 5px;
+	padding: 0;
+}
+
+#toggle 
+{
+	margin-top: 38px;
+}
+
+#navbar 
+{
+	margin: 30px 0 0;
+	padding: 0;
+	color: #8c8c8c;
+	font-family: 'Raleway';
+	font-size: 15px;
+	line-height: 50px;
+	text-decoration: none;
+}
+
+#navbar li a:hover, #navbar li.selected a
+{
+	color: #fff;
+}
+
 body
 {
 	background: url(../images/background.png);
@@ -454,6 +495,7 @@ img
 {
 	background: none !important;
 	min-height: 600px;
+	margin-bottom: 25px;
 }
 #about h2 {
 	color: #000;
@@ -466,12 +508,14 @@ img
 	font-weight: normal;
 	line-height:24px;
 	text-transform: uppercase;
+	margin-left: 18%;
 }
 #about ul {
 	display: inline-block;
 	list-style: none;
 	margin: 0 0 30px;
 	padding: 0;
+	margin-left: 18%;
 }
 #about ul li {
 	float: left;
