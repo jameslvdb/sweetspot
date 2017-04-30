@@ -153,16 +153,21 @@ function zillowAjax(url, min, max, formElements) {
 			// achieved using the $.grep function.
 
 			// usage is $.grep(<array>, function(){});
-            var regions = $.grep($(xml).find('list region'), function(region) {
+            var regions;
+			regions = $.grep($(xml).find('list region'), function(region) {
 				var zindexElem = $(region).find('zindex')[0];
 				if (!zindexElem) {
-					console.log("bailing out on " + zindexElem);
 					return false;
 				}
 				var zindex = parseInt($(zindexElem).text());
-				console.log(zindex);
 				return zindex <= max && zindex >= min;
 			});
+
+			// this block runs if no results are found with pricing data
+			if (regions.length == 0) {
+				regions = $(xml).find('list region');
+				alert("No pricing results found for this region. Displaying first ten results.");
+			}
 
 			// start a resultString here to replace the current <ul>
 			var resultString = "<ul>";
