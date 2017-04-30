@@ -16,14 +16,29 @@
 	}
 }
 
-nav
+@media (max-width: 767px)
 {
-	background-color: red;
+	#nav {
+		background-color: #282828;
+		width: 30%;
+		margin-left: 75%;
+	}
+
+	#nav ul li {
+		margin-left: 10%;
+	}
+}
+
+@media (min-width: 768px)
+{
+	#nav {
+		margin-top: 30px;
+	}
 }
 
 .navbar-default 
 {
-
+	background-color: white;
 	height: 90px;
 	margin-top: -96px;
 	opacity: 0.9;
@@ -41,9 +56,8 @@ nav
 	margin-top: 38px;
 }
 
-#navbar 
+#nav
 {
-	margin: 30px 0 0;
 	padding: 0;
 	color: #8c8c8c;
 	font-family: 'Raleway';
@@ -52,7 +66,7 @@ nav
 	text-decoration: none;
 }
 
-#navbar li a:hover, #navbar li.selected a
+#nav li a:hover, #nav li.selected a
 {
 	color: #fff;
 }
