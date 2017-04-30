@@ -57,6 +57,7 @@ function addMarkers(latitudes, longitudes, names, descriptions, isJob)
 					label: labels[i]
 				}
 			);
+			currentJobMarkers[i] = marker;
 		}
 		else
 		{
@@ -78,6 +79,7 @@ function addMarkers(latitudes, longitudes, names, descriptions, isJob)
 					label: labels[i]
 				}
 			);
+			currentRealEstateMarkers[i] = marker;
 		}
 
 		//Set what the tooltip will say
@@ -99,6 +101,8 @@ function addMarkers(latitudes, longitudes, names, descriptions, isJob)
 	        }
         );
 	}
+
+	resizeBounds();
 }
 
 function resetMarkers(isJob)
@@ -119,10 +123,30 @@ function resetMarkers(isJob)
 	}
 }
 
+function resizeBounds()
+{
+	var bounds = new google.maps.LatLngBounds();
+	// for (var i = 0; i < currentJobMarkers.length; i++) 
+	// {
+ // 		bounds.extend(currentJobMarkers[i].getPosition());
+ // 	}
+ 	for(var i = 0; i < currentRealEstateMarkers.length; i++)
+ 	{
+ 		bounds.extend(currentRealEstateMarkers[i].getPosition());
+ 	}
+ 	map.fitBounds(bounds);
+}
+
 function zillowSetup()
 {
 	// gets all of the elements in the real estate form
 	var elements = document.forms["realestate-form"].elements;
+	for (i = 0; i < elements.length; i++) {
+		if (elements[i].value == "") {
+			alert("Please fill out all fields.");
+			return;
+		}
+	}
 	// sets up the zillow url that I'm going to use
 	var basicURL = "http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=X1-ZWz1frq0hcv0nf_4wzn5";
 	// append the search parameters to the url
@@ -153,16 +177,21 @@ function zillowAjax(url, min, max, formElements) {
 			// achieved using the $.grep function.
 
 			// usage is $.grep(<array>, function(){});
-            var regions = $.grep($(xml).find('list region'), function(region) {
+            var regions;
+			regions = $.grep($(xml).find('list region'), function(region) {
 				var zindexElem = $(region).find('zindex')[0];
 				if (!zindexElem) {
-					console.log("bailing out on " + zindexElem);
 					return false;
 				}
 				var zindex = parseInt($(zindexElem).text());
-				console.log(zindex);
 				return zindex <= max && zindex >= min;
 			});
+
+			// this block runs if no results are found with pricing data
+			if (regions.length == 0) {
+				regions = $(xml).find('list region');
+				alert("No pricing results found for this region. Displaying first ten results.");
+			}
 
 			// start a resultString here to replace the current <ul>
 			var resultString = "<ul>";
