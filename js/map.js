@@ -13,9 +13,9 @@ function loadScript()
 	    zoom: 5,
 	    mapTypeId: google.maps.MapTypeId.ROADMAP
 	}
-	var script = document.createElement('script');
-	script.type = 'text/javascript';
-	document.body.appendChild(script);
+	// var script = document.createElement('script');
+	// script.type = 'text/javascript';
+	// document.body.appendChild(script);
 	map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
 	//Test adding markers by coordinates
@@ -135,13 +135,13 @@ function zillowSetup()
 	var minBudget = parseInt(elements[4].value);
 	var maxBudget = parseInt(elements[5].value);
 	// console.log('minBudget: ' + minBudget);
-	var zillowData = zillowAjax(encodedURL, minBudget, maxBudget);
+	var zillowData = zillowAjax(encodedURL, minBudget, maxBudget, elements);
 	if (zillowData) {
 		console.log("zillowData success");
 	}
 }
 
-function zillowAjax(url, min, max) {
+function zillowAjax(url, min, max, formElements) {
 	// $.ajax is the jQuery function for making a query
 	$.ajax({
 		type: "GET",
@@ -152,6 +152,8 @@ function zillowAjax(url, min, max) {
 			// regions is an array of all neighborhoods that match our
 			// search criteria based on min and max budgets. This is
 			// achieved using the $.grep function.
+
+			// usage is $.grep(<array>, function(){});
             var regions = $.grep($(xml).find('list region'), function(region) {
 				var zindexElem = $(region).find('zindex')[0];
 				if (!zindexElem) {
@@ -163,14 +165,27 @@ function zillowAjax(url, min, max) {
 				return zindex <= max && zindex >= min;
 			});
 			// for each region that matches our criteria, show the data
-			// on the console 
-			$(regions).each(function() {
-                $(this).find('name').each(function() {
-                    var name = $(this).text();
-                    console.log("Name: " + name);
-                });
+			// on the console
+			var resultString = "<ul>";
+			var letters = "ABCDEFGHIJ";
+			var tempURL;
+			$(regions).slice(0,10).each(function(i) {
+				resultString += "<li>";
+				$(this).find('url').each(function() {
+					tempURL = $(this).text();
+					console.log("URL: " + tempURL);
+				});
+				$(this).find('name').each(function() {
+					var name = $(this).text();
+					resultString += letters[i] + ". <a href='" + tempURL + "'>" + name + "</a>";
+					var city = formElements[0].value;
+					var state = formElements[1].value;
+					resultString += "<p>" + city + ", " + state + "</p>";
+					console.log("Name: " + name);
+				});
 				$(this).find('zindex').each(function() {
 					var zindex = $(this).text();
+					resultString += "<p>Zindex: $" + zindex + "</p>";
 					console.log("Zindex: " + zindex);
 				});
 				$(this).find('latitude').each(function() {
@@ -181,11 +196,10 @@ function zillowAjax(url, min, max) {
 					var long = $(this).text();
 					console.log("Longitude: " + long);
 				});
-				$(this).find('url').each(function() {
-					var neighborhoodURL = $(this).text();
-					console.log("URL: " + neighborhoodURL);
-				})
-            });
+				resultString += "</li>";
+			});
+			resultString += "</ul>";
+			$('#featured-real-estate ul').replaceWith(resultString);
     	}
 	});
 }
