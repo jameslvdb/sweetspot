@@ -173,6 +173,7 @@ img
 
 #colThree 
 {
+	font-family: 'Raleway';
 	margin-top: 30px;
 	background-color:rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
@@ -182,6 +183,7 @@ img
 
 #colThree p 
 {
+	font-family: 'Raleway';
 	color: #e0e0e0;
 	font-size: 13px;
 	line-height: 24px;
@@ -507,6 +509,7 @@ img
 /*=============== ABOUT ===============*/
 #about
 {
+	font-family: "Raleway";
 	border-radius: 20px;
 	width: 90%;
 	min-height: 600px;
