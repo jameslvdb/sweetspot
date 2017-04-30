@@ -507,8 +507,10 @@ img
 /*=============== ABOUT ===============*/
 #about
 {
-	background: none !important;
+	border-radius: 20px;
+	width: 90%;
 	min-height: 600px;
+	margin-left: 5%;
 	margin-bottom: 25px;
 }
 #about h2 {
@@ -516,29 +518,24 @@ img
 	text-align: center;
 }
 #about h4 {
+	text-align: center;
 	color: #000;
 	font-family: "Raleway";
 	font-size: 14px;
 	font-weight: normal;
 	line-height:24px;
 	text-transform: uppercase;
-	margin-left: 18%;
 }
 #about ul {
 	display: inline-block;
 	list-style: none;
-	margin: 0 0 30px;
 	padding: 0;
-	margin-left: 18%;
 }
 #about ul li {
-	float: left;
-	width: 220px;
-	margin: 0 10px;
+	text-align: center;
 }
 #about ul li p {
 	color: #606060;
-	padding: 0 20px 0 0;
 }
 
 #main {
