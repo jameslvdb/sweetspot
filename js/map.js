@@ -126,14 +126,14 @@ function zillowSetup()
 	// sets up the zillow url that I'm going to use
 	var basicURL = "http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=X1-ZWz1frq0hcv0nf_4wzn5";
 	// append the search parameters to the url
-	var stateURL = basicURL + "&state=" + elements[1].value.toLowerCase();
-	var cityURL = stateURL + "&city=" + elements[0].value.toLowerCase();
+	var stateURL = basicURL + "&state=" + elements["state"].value.toLowerCase();
+	var cityURL = stateURL + "&city=" + elements["city"].value.toLowerCase();
 	var queryURL = cityURL + "&childtype=neighborhood";
 	// encodes the url so that the proxy can use it properly
 	var encodedURL = encodeURIComponent(queryURL);
 	// console.log(encodedURL);
-	var minBudget = parseInt(elements[4].value);
-	var maxBudget = parseInt(elements[5].value);
+	var minBudget = parseInt(elements["min"].value);
+	var maxBudget = parseInt(elements["max"].value);
 	var zillowData = zillowAjax(encodedURL, minBudget, maxBudget, elements);
 	if (zillowData) {
 		console.log("zillowData success");
@@ -191,8 +191,8 @@ function zillowAjax(url, min, max, formElements) {
 					names.push(name);
 					// using href to make the neighborhood name a hyperlink to the Zillow page
 					resultString += letters[i] + ". <a href='" + tempURL + "'>" + name + "</a>";
-					var city = formElements[0].value;
-					var state = formElements[1].value;
+					var city = formElements["city"].value;
+					var state = formElements["state"].value;
 					resultString += "<p>" + city + ", " + state + "</p>";
 					console.log("Name: " + name);
 				});
