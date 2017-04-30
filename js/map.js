@@ -57,6 +57,7 @@ function addMarkers(latitudes, longitudes, names, descriptions, isJob)
 					label: labels[i]
 				}
 			);
+			currentJobMarkers[i] = marker;
 		}
 		else
 		{
@@ -78,6 +79,7 @@ function addMarkers(latitudes, longitudes, names, descriptions, isJob)
 					label: labels[i]
 				}
 			);
+			currentRealEstateMarkers[i] = marker;
 		}
 
 		//Set what the tooltip will say
@@ -99,6 +101,8 @@ function addMarkers(latitudes, longitudes, names, descriptions, isJob)
 	        }
         );
 	}
+
+	resizeBounds();
 }
 
 function resetMarkers(isJob)
@@ -117,6 +121,20 @@ function resetMarkers(isJob)
 			currentRealEstateMarkers[i].setMap(null);
 		}
 	}
+}
+
+function resizeBounds()
+{
+	var bounds = new google.maps.LatLngBounds();
+	// for (var i = 0; i < currentJobMarkers.length; i++) 
+	// {
+ // 		bounds.extend(currentJobMarkers[i].getPosition());
+ // 	}
+ 	for(var i = 0; i < currentRealEstateMarkers.length; i++)
+ 	{
+ 		bounds.extend(currentRealEstateMarkers[i].getPosition());
+ 	}
+ 	map.fitBounds(bounds);
 }
 
 function zillowSetup()
