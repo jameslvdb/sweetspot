@@ -26,7 +26,7 @@ function loadScript()
 	// addJobMarkers(latitudes, longitudes, names, descriptions, true);
 }
 
-function addJobMarkers(latitudes, longitudes, names, descriptions, isJob)
+function addMarkers(latitudes, longitudes, names, descriptions, isJob)
 {
 	var labels = 'ABCDEFGHIJ';
 
@@ -134,7 +134,6 @@ function zillowSetup()
 	// console.log(encodedURL);
 	var minBudget = parseInt(elements[4].value);
 	var maxBudget = parseInt(elements[5].value);
-	// console.log('minBudget: ' + minBudget);
 	var zillowData = zillowAjax(encodedURL, minBudget, maxBudget, elements);
 	if (zillowData) {
 		console.log("zillowData success");
@@ -164,42 +163,65 @@ function zillowAjax(url, min, max, formElements) {
 				console.log(zindex);
 				return zindex <= max && zindex >= min;
 			});
-			// for each region that matches our criteria, show the data
-			// on the console
+
+			// start a resultString here to replace the current <ul>
 			var resultString = "<ul>";
+			// this is used to label each entry
 			var letters = "ABCDEFGHIJ";
 			var tempURL;
+			// these empty arrays will be filled with data to set the map markers
+			var names = [];
+			var lats = [];
+			var longs = [];
+			var descriptions = [];
+
+			// .slice(0,10); gets the first ten elements (<start position>, <end position>)
+			// Only gets 10 because it extracts up to but not including the end
 			$(regions).slice(0,10).each(function(i) {
 				resultString += "<li>";
+				// finds all of the URLs provided by the Zillow API call
 				$(this).find('url').each(function() {
 					tempURL = $(this).text();
+					descriptions.push(tempURL);
 					console.log("URL: " + tempURL);
 				});
+				// finds the names of the neighborhoods
 				$(this).find('name').each(function() {
 					var name = $(this).text();
+					names.push(name);
+					// using href to make the neighborhood name a hyperlink to the Zillow page
 					resultString += letters[i] + ". <a href='" + tempURL + "'>" + name + "</a>";
 					var city = formElements[0].value;
 					var state = formElements[1].value;
 					resultString += "<p>" + city + ", " + state + "</p>";
 					console.log("Name: " + name);
 				});
+				// finds the Zindex of each neighborhood
 				$(this).find('zindex').each(function() {
 					var zindex = $(this).text();
 					resultString += "<p>Zindex: $" + zindex + "</p>";
 					console.log("Zindex: " + zindex);
 				});
+				// finds the latitudes
 				$(this).find('latitude').each(function() {
 					var lat = $(this).text();
+					lats.push(lat);
 					console.log("Latitude: " + lat);
 				});
+				// finds the longitudes
 				$(this).find('longitude').each(function() {
 					var long = $(this).text();
+					longs.push(long);
 					console.log("Longitude: " + long);
 				});
 				resultString += "</li>";
 			});
 			resultString += "</ul>";
+			// this is what makes this all work: $().replaceWith(resultString)
+			// it replaces the entire <ul> element with my custom one that I
+			// built inside of the $.ajax success function.
 			$('#featured-real-estate ul').replaceWith(resultString);
+			addMarkers(lats, longs, names, descriptions, false);
     	}
 	});
 }
