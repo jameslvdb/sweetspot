@@ -152,6 +152,7 @@ img
 	border: 0;
 	margin: 0;
 	padding: 0 0 8px;
+	vertical-align: bottom;
 }
 
 #colTwo 
@@ -354,9 +355,17 @@ img
 }
 
 /*========== SCROLLABLE CONTENT ===========*/
-#scrollable-content 
+#scrollable-content-jobs
 {
-  height: 500px;
+  height: 520px;
+  overflow: auto;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+#scrollable-content-real-estate
+{
+  height: 505px;
   overflow: auto;
   max-width: 100%;
   margin-bottom: 10px;
@@ -462,7 +471,7 @@ img
 }
 #featured-jobs li {
 	float: left;
-	width: 304px;
+	width: 100%;
 	color: #ebebeb;
 	position: relative;
 	margin-bottom: 15px;
