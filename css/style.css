@@ -3,6 +3,26 @@
 /***************************************************************/
 
 /*================== FONTS ==================*/
+
+
+
+/* HYPERLINK COLORS 
+-----------------------*/
+
+#colOne ul li a, #colThree ul li a
+{
+	color: rgba(0, 31, 117, 1) !important;
+}
+
+#colOne ul li a:hover, #colThree ul li a:hover
+{
+	color: rgba(0, 31, 117, 0.5) !important;
+}
+
+/*---------------------------
+/*---------------------------*/
+
+
 @font-face
 {
 	font-family: 'Raleway';
