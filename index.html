@@ -11,6 +11,7 @@
 		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 		<script type = "text/javascript" src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdN58T_xbyPWpy4CtSUUFoIbn40w5AOEc"></script>
 		<script type = "text/javascript" src = "js/map.js"></script>
+		<script type = "text/javascript" src = "js/jobHandler.js"></script>
 		<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 	<body>
@@ -311,20 +312,20 @@
 						<div id="colOneBottom">
 							<h3>Search for a job</h3>
 							<div id="form-setup">
-								<form>
+								<form id="job-form">
 									<label>City</label>
-									<input type="text" value="" class="txtfield">
+									<input name="city" type="text" value="" class="txtfield">
 									<label>State</label>
-									<input type="text" value="" class="txtfield">
+									<input name="state" type="text" value="" class="txtfield">
 									<label>Zip</label>
-									<input type="text" value="" class="txtfield">
+									<input name="zip" type="text" value="" class="txtfield">
 									<label>Job Title</label>
-									<input type="text" value="" class="txtfield">
+									<input name="title" type="text" value="" class="txtfield">
 									<label>Minimum Salary</label>
-									<input type="text" value="" class="txtfield">
+									<input name="min" type="text" value="" class="txtfield">
 									<label>Distance</label>
-									<input type="text" value="" class="txtfield">
-									<input type="submit" value="Submit" class="btn">
+									<input name="radius" type="text" value="" class="txtfield">
+									<input type="button" value="Submit" onclick="findJobs()" class="btn">
 								</form>
 							</div>
 						</div>
