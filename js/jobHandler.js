@@ -6,10 +6,8 @@ function findJobs() {
 	// Get data values
 	var city = elems["city"].value.toLowerCase();
 	var state = elems["state"].value.toLowerCase();
-	var zip = elems["zip"].value.toLowerCase();
 	var title = elems["title"].value.toLowerCase();
 	var min = elems["min"].value;
-	var radius = elems["radius"].value;
 	
 	// Build Location Query
 	var loc = "";
@@ -17,10 +15,6 @@ function findJobs() {
 	if(state && state.length > 0) {
 		if(loc && loc.length > 0) loc += ", ";
 		loc += state;
-	}
-	if(zip && zip.length > 0) {
-		if(loc && loc.length > 0) loc += ", ";
-		loc += zip;
 	}
 	
 	// Build Job Query
@@ -34,7 +28,6 @@ function findJobs() {
 	// Create Final URL
 	if(qry) url += "&q="+qry;
 	if(loc) url += "&l="+loc;
-	if(radius) url += "&radius="+radius;
 	var encodedURL = encodeURIComponent(url);
 
 	$.ajax({

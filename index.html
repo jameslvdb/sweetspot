@@ -85,18 +85,15 @@
 							<h3>Search for a job</h3>
 							<div id="form-setup">
 								<form id="job-form">
+									<label>All fields are required*</label>
 									<label>City</label>
-									<input name="city" type="text" value="" class="txtfield">
+									<input name="city" type="text" value="" class="txtfield" required>
 									<label>State</label>
-									<input name="state" type="text" value="" class="txtfield">
-									<label>Zip</label>
-									<input name="zip" type="text" value="" class="txtfield">
+									<input name="state" type="text" value="" class="txtfield" required>
 									<label>Job Title</label>
-									<input name="title" type="text" value="" class="txtfield">
+									<input name="title" type="text" value="" class="txtfield" required>
 									<label>Minimum Salary</label>
-									<input name="min" type="text" value="" class="txtfield">
-									<label>Distance</label>
-									<input name="radius" type="text" value="" class="txtfield">
+									<input name="min" type="text" value="" class="txtfield" required>
 									<input type="button" value="Submit" onclick="findJobs()" class="btn">
 								</form>
 							</div>
