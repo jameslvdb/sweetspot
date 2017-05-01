@@ -16,6 +16,61 @@
 	}
 }
 
+@media (max-width: 767px)
+{
+	#nav {
+		background-color: #282828;
+		width: 30%;
+		margin-left: 75%;
+	}
+
+	#nav ul li {
+		margin-left: 10%;
+	}
+}
+
+@media (min-width: 768px)
+{
+	#nav {
+		margin-top: 30px;
+	}
+}
+
+.navbar-default 
+{
+	background-color: white;
+	height: 90px;
+	margin-top: -96px;
+	opacity: 0.9;
+
+}
+
+.navbar-brand 
+{
+	margin-top: 5px;
+	padding: 0;
+}
+
+#toggle 
+{
+	margin-top: 38px;
+}
+
+#nav
+{
+	padding: 0;
+	color: #8c8c8c;
+	font-family: 'Raleway';
+	font-size: 15px;
+	line-height: 50px;
+	text-decoration: none;
+}
+
+#nav li a:hover, #nav li.selected a
+{
+	color: #fff;
+}
+
 body
 {
 	background: url(../images/background.png);
@@ -84,6 +139,20 @@ img
 {
 	line-height: 25px;
 }
+#colOne input.btn {
+	color: #fff;
+	background-color: #303030;
+	border-radius: 20px;
+	cursor: pointer;
+	font-family: "Raleway";
+	font-size: 13px;
+	height: 31px;
+	line-height: 31px;
+	width: 125px;
+	border: 0;
+	margin: 0;
+	padding: 0 0 8px;
+}
 
 #colTwo 
 {
@@ -109,7 +178,7 @@ img
 #colTwo p 
 {
 	color: #e0e0e0;
-	font-size: 16px;
+	font-size: 15px;
 	line-height: 24px;
 	margin: 0;
 	font-family: 'Raleway';
@@ -118,6 +187,7 @@ img
 
 #colThree 
 {
+	font-family: 'Raleway';
 	margin-top: 30px;
 	background-color:rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
@@ -127,11 +197,27 @@ img
 
 #colThree p 
 {
+	font-family: 'Raleway';
 	color: #e0e0e0;
 	font-size: 13px;
 	line-height: 24px;
 	margin: 0;
 	padding: 0 0 24px;
+}
+
+#colThree input.btn {
+	color: #fff;
+	background-color: #303030;
+	border-radius: 20px;
+	cursor: pointer;
+	font-family: "Raleway";
+	font-size: 13px;
+	height: 31px;
+	line-height: 31px;
+	width: 165px;
+	border: 0;
+	margin: 0;
+	padding: 0 0 8px;
 }
 
 #colThree h2, #colThree h3 
@@ -172,7 +258,7 @@ img
 #colOneBottom
 {
 	margin-top: 50px;
-	height: 650px;
+	height: 420px;
 	background-color:rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
 	padding: 5px 5px 5px 5px;
@@ -227,7 +313,7 @@ img
 	margin-top: 50px;
 	background-color:rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
-	height: 650px;
+	height: 420px;
 	padding: 5px 5px 5px 5px;
 	font-family: 'Raleway';
 }
@@ -270,9 +356,10 @@ img
 /*========== SCROLLABLE CONTENT ===========*/
 #scrollable-content 
 {
-  height: 535px;
+  height: 500px;
   overflow: auto;
   max-width: 100%;
+  margin-bottom: 10px;
 }
 
 /*==================== MAP ====================*/
@@ -362,7 +449,7 @@ img
 /*============== JOBS ==============*/
 #featured-jobs {
 	float: left;
-	height: 450px;
+	height: 420px;
 	width: 100%;
 	margin: 0 20px 30px 0;
 	padding: 0 10px 0 0;
@@ -452,14 +539,19 @@ img
 /*=============== ABOUT ===============*/
 #about
 {
-	background: none !important;
+	font-family: "Raleway";
+	border-radius: 20px;
+	width: 90%;
 	min-height: 600px;
+	margin-left: 5%;
+	margin-bottom: 25px;
 }
 #about h2 {
 	color: #000;
 	text-align: center;
 }
 #about h4 {
+	text-align: center;
 	color: #000;
 	font-family: "Raleway";
 	font-size: 14px;
@@ -470,17 +562,13 @@ img
 #about ul {
 	display: inline-block;
 	list-style: none;
-	margin: 0 0 30px;
 	padding: 0;
 }
 #about ul li {
-	float: left;
-	width: 220px;
-	margin: 0 10px;
+	text-align: center;
 }
 #about ul li p {
 	color: #606060;
-	padding: 0 20px 0 0;
 }
 
 #main {
