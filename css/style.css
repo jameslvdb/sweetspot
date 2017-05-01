@@ -139,6 +139,20 @@ img
 {
 	line-height: 25px;
 }
+#colOne input.btn {
+	color: #fff;
+	background-color: #303030;
+	border-radius: 20px;
+	cursor: pointer;
+	font-family: "Raleway";
+	font-size: 13px;
+	height: 31px;
+	line-height: 31px;
+	width: 125px;
+	border: 0;
+	margin: 0;
+	padding: 0 0 8px;
+}
 
 #colTwo 
 {
@@ -189,6 +203,21 @@ img
 	line-height: 24px;
 	margin: 0;
 	padding: 0 0 24px;
+}
+
+#colThree input.btn {
+	color: #fff;
+	background-color: #303030;
+	border-radius: 20px;
+	cursor: pointer;
+	font-family: "Raleway";
+	font-size: 13px;
+	height: 31px;
+	line-height: 31px;
+	width: 165px;
+	border: 0;
+	margin: 0;
+	padding: 0 0 8px;
 }
 
 #colThree h2, #colThree h3 
@@ -327,9 +356,10 @@ img
 /*========== SCROLLABLE CONTENT ===========*/
 #scrollable-content 
 {
-  height: 535px;
+  height: 500px;
   overflow: auto;
   max-width: 100%;
+  margin-bottom: 10px;
 }
 
 /*==================== MAP ====================*/
@@ -419,7 +449,7 @@ img
 /*============== JOBS ==============*/
 #featured-jobs {
 	float: left;
-	height: 450px;
+	height: 420px;
 	width: 100%;
 	margin: 0 20px 30px 0;
 	padding: 0 10px 0 0;

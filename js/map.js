@@ -126,10 +126,10 @@ function resetMarkers(isJob)
 function resizeBounds()
 {
 	var bounds = new google.maps.LatLngBounds();
-	// for (var i = 0; i < currentJobMarkers.length; i++) 
-	// {
- // 		bounds.extend(currentJobMarkers[i].getPosition());
- // 	}
+	for (var i = 0; i < currentJobMarkers.length; i++) 
+	{
+ 		bounds.extend(currentJobMarkers[i].getPosition());
+ 	}
  	for(var i = 0; i < currentRealEstateMarkers.length; i++)
  	{
  		bounds.extend(currentRealEstateMarkers[i].getPosition());
@@ -253,6 +253,19 @@ function zillowAjax(url, min, max, formElements) {
 			addMarkers(lats, longs, names, descriptions, false);
     	}
 	});
+}
+
+function resetResults(isJob)
+{
+	resetMarkers(isJob);
+	if(isJob)
+	{
+		$('#featured-jobs ul').replaceWith("<ul><li>Search for a job to see results!</li></ul>");
+	}
+	else
+	{
+		$('#featured-real-estate ul').replaceWith("<ul><li>Search for real estate to see results!</li></ul>");
+	}
 }
 
 window.onload = loadScript;
